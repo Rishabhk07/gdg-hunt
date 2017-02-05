@@ -38,6 +38,7 @@ public class Scan extends AppCompatActivity {
         final CameraSource cameraSource = new CameraSource
                 .Builder(this, barcodeDetector)
                 .setRequestedPreviewSize(640, 480)
+                .setAutoFocusEnabled(true)
                 .build();
         barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
             @Override
