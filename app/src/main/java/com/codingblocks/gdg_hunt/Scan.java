@@ -8,7 +8,10 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
@@ -21,6 +24,11 @@ public class Scan extends AppCompatActivity {
 
     private SurfaceView cameraView;
     private TextView barcodeInfo;
+    private TextView question;
+    Button verify;
+    private int track = 0;
+    dbHelper mdbHelper;
+    static int scanned=-1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +37,13 @@ public class Scan extends AppCompatActivity {
 
         cameraView = (SurfaceView) findViewById(R.id.camera_view);
         barcodeInfo = (TextView) findViewById(R.id.code_info);
+        verify = (Button) findViewById(R.id.verify);
+        question = (TextView) findViewById(R.id.question);
+
+        mdbHelper = new dbHelper();
+        mdbHelper.createDummydb();
+        //Show the first(0th) question
+        display(mdbHelper.get());
 
         BarcodeDetector barcodeDetector =
                 new BarcodeDetector.Builder(this)
@@ -52,8 +67,9 @@ public class Scan extends AppCompatActivity {
                 if (barcodes.size() != 0) {
                     barcodeInfo.post(new Runnable() {    // Use the post method of the TextView
                         public void run() {
+                            scanned = Integer.parseInt(barcodes.valueAt(0).displayValue);
                             barcodeInfo.setText(    // Update the TextView
-                                    barcodes.valueAt(0).displayValue
+                                    scanned + ""
                             );
                         }
                     });
@@ -96,5 +112,37 @@ public class Scan extends AppCompatActivity {
                 cameraSource.stop();
             }
         });
+    }
+
+    public void verifyQR(View view)
+    {
+        if(scanned == -1) {
+            Log.d("gdg_hunt","Nothing detected, blocking");
+            return;
+        }
+
+        if(track == 100) {
+            Toast.makeText(getApplicationContext(), "GAME OVER", Toast.LENGTH_LONG).show();
+            return;
+        }
+        TreasureLocation t = mdbHelper.get();
+        boolean ret = (t.getPass() == scanned);
+        if(ret) {
+            track = mdbHelper.moveToNext();
+            scanned = -1;
+            if(track < 100)
+            display(mdbHelper.get());
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Invalid password!", Toast.LENGTH_LONG).show();
+            scanned = -1;
+        }
+    }
+
+    private void display(TreasureLocation obj)
+    {
+        //set new question here
+        question.setText(obj.getQ());
+        barcodeInfo.setText(scanned + "");
     }
 }
