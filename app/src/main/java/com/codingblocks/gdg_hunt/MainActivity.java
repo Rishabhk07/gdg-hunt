@@ -10,17 +10,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     Button b1,b2;
     int permReqCode = 111;
+    TextView tv_score;
+    ScorePref scorePref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         int perm = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
 
         if(perm == PackageManager.PERMISSION_DENIED){
@@ -41,7 +43,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,Scan.class));
+                finish();
             }
         });
     }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        scorePref = new ScorePref(getApplicationContext());
+        tv_score = (TextView) findViewById(R.id.score);
+        tv_score.setText(tv_score.getText().toString()+scorePref.getScore());
+    }
+
 }

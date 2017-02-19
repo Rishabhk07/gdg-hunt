@@ -11,6 +11,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +32,6 @@ public class Scan extends AppCompatActivity {
     dbHelper mdbHelper;
     static int scanned=-1;
     Context context;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +43,8 @@ public class Scan extends AppCompatActivity {
         barcodeInfo = (TextView) findViewById(R.id.code_info);
         verify = (Button) findViewById(R.id.verify);
         question = (TextView) findViewById(R.id.question);
-
         mdbHelper = new dbHelper();
-        mdbHelper.createDummydb();
+        mdbHelper.createDummydb(this);
         //Show the first(0th) question
         display(mdbHelper.get());
 
@@ -142,7 +141,10 @@ public class Scan extends AppCompatActivity {
             track = mdbHelper.moveToNext();
             scanned = -1;
             if(track < 100)
-            display(mdbHelper.get());
+            {
+
+                display(mdbHelper.get());
+            }
         }
         else {
             Toast.makeText(getApplicationContext(), "Invalid password!", Toast.LENGTH_LONG).show();

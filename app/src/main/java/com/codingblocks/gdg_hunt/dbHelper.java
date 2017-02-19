@@ -1,5 +1,6 @@
 package com.codingblocks.gdg_hunt;
 
+import android.content.Context;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -11,10 +12,17 @@ import java.util.Random;
 
 public class dbHelper {
     ArrayList<TreasureLocation> db;
-    int current = 1;
+    PathPref pathPref;
+    ScorePref scorePref;
+    int current, score ;
 
-    public void createDummydb()
+    public void createDummydb(Context context)
     {
+        pathPref = new PathPref(context);
+        current=pathPref.getPath();
+        scorePref = new ScorePref(context);
+        score = scorePref.getScore();
+
         db = new ArrayList<>();
         db.add(new TreasureLocation("LT-3","What's my name?", 123, 0)); //rand 2,3,4,5
 
@@ -60,6 +68,8 @@ public class dbHelper {
             current = random(temp);
 
         Log.d("gdg_hunt", "Moving to=" + current);
+        pathPref.setPath(current);
+        scorePref.setScore(++score);
         return current;
     }
 
@@ -84,6 +94,7 @@ public class dbHelper {
                 val = -1;
         }
         Log.d("gdg_hunt","After dynamic rotation=" + val);
+        pathPref.setPath(val);
         return val;
     }
 }

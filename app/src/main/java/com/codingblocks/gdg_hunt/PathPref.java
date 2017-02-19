@@ -15,7 +15,7 @@ public class PathPref {
     SharedPreferences.Editor editor;
 
     int PRIVATE_MODE=0;
-    private static final String PREF_NAME="gdg-hunt";
+    private static final String PREF_NAME="gdg-hunt-path";
     private static final String PATH_NUMBER="pathNumber";
     private static final String IS_PATH_SET="IsPathSet";
 
@@ -26,10 +26,9 @@ public class PathPref {
         editor=pref.edit();
     }
 
-    public void setPath()
+    public void setPath(int  p)
     {
-        Random random = new Random();
-        int x=random.nextInt(4);
+        int x=p;
         editor.putInt(PATH_NUMBER,x);
         editor.putBoolean(IS_PATH_SET,true);
         editor.commit();
@@ -37,7 +36,7 @@ public class PathPref {
 
     public int getPath()
     {
-        return pref.getInt(PATH_NUMBER,0);
+        return pref.getInt(PATH_NUMBER,1);
     }
 
     public boolean isPathSet()
