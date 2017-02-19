@@ -1,5 +1,6 @@
 package com.codingblocks.gdg_hunt;
 
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -29,11 +30,14 @@ public class Scan extends AppCompatActivity {
     private int track = 0;
     dbHelper mdbHelper;
     static int scanned=-1;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
+
+        context = this;
 
         cameraView = (SurfaceView) findViewById(R.id.camera_view);
         barcodeInfo = (TextView) findViewById(R.id.code_info);
@@ -67,10 +71,17 @@ public class Scan extends AppCompatActivity {
                 if (barcodes.size() != 0) {
                     barcodeInfo.post(new Runnable() {    // Use the post method of the TextView
                         public void run() {
-                            scanned = Integer.parseInt(barcodes.valueAt(0).displayValue);
-                            barcodeInfo.setText(    // Update the TextView
-                                    scanned + ""
-                            );
+                            try
+                            {
+                                scanned = Integer.parseInt(barcodes.valueAt(0).displayValue);
+                                barcodeInfo.setText(    // Update the TextView
+                                        scanned + ""
+                                );
+                            }
+                            catch (Exception e)
+                            {
+                                Log.e("error : ",e.getMessage());
+                            }
                         }
                     });
                 }
