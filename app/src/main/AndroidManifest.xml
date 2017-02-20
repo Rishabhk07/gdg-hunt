@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".FromAssets" />
         <activity android:name=".Scan" />
+        <activity android:name=".QuestionDisplay" />
         <activity android:name=".Intro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

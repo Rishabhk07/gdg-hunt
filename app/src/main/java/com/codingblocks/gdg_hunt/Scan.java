@@ -139,7 +139,7 @@ public class Scan extends AppCompatActivity {
 //            return;
 //        }
         TreasureLocation t = mdbHelper.get();
-        boolean ret = (t.getPass() == scanned);
+        boolean ret = (t.getPass().equals(scan));
         if(ret) {
             track = mdbHelper.moveToNext();
             scanned = -1;

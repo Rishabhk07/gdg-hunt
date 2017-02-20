@@ -1,5 +1,7 @@
 package com.codingblocks.gdg_hunt;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,14 +32,21 @@ public class Intro extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 code = startText.getText().toString();
-                if(code == "0000"){
+                if(code.equals("0000")){
                     Log.d(TAG, "onClick: "  + code);
-                }else if(code == "1111"){
+                    Intent i = new Intent(Intro.this , QuestionDisplay.class);
+                    int random = (int) (Math.random() * 4);
 
-                }else if(code == "2222"){
-
-                }else if(code == "3333"){
-
+                    if(random == 0){
+                        SharedPreferences sharedPreferences = getSharedPreferences("random" , random);
+                    }else if(random == 1){
+                        SharedPreferences sharedPreferences = getSharedPreferences("random" , random);
+                    }else if(random == 2){
+                        SharedPreferences sharedPreferences = getSharedPreferences("random" , random);
+                    }else if(random == 3){
+                        SharedPreferences sharedPreferences = getSharedPreferences("random" , random);
+                    }
+                    startActivity(i);
                 }else{
                     Snackbar snackbar
                              = Snackbar.make(findViewById(R.id.activity_intro), "Invalid Input", Snackbar.LENGTH_SHORT);

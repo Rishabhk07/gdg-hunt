@@ -7,14 +7,16 @@ package com.codingblocks.gdg_hunt;
 public class TreasureLocation {
     String location;
     String question;
-    int pass;
+    String description;
+    String pass;
     int next;
 
 
-    public TreasureLocation(String location, String question, int pass, int next)
+    public TreasureLocation(String location, String question, String description ,String pass, int next)
     {
         this.location = location;
         this.question = question;
+        this.description = description;
         this.pass = pass;
         this.next = next;
 
@@ -25,7 +27,7 @@ public class TreasureLocation {
         return next;
     }
 
-    public int getPass()
+    public String getPass()
     {
         return pass;
     }
@@ -33,6 +35,11 @@ public class TreasureLocation {
     public String getQ()
     {
         return question;
+    }
+
+    public String getDescription()
+    {
+        return description;
     }
 
 }

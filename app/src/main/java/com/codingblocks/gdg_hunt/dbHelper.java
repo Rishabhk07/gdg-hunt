@@ -25,31 +25,31 @@ public class dbHelper {
 
         db = new ArrayList<>();
 
-        db.add(new TreasureLocation("LT-3","What's my name?", 123, 0)); //rand 2,3,4,5
-
-        db.add(new TreasureLocation("Gate 1","Address?", 123, 6));
-        db.add(new TreasureLocation("Gate 2","email?", 123, 6));
-        db.add(new TreasureLocation("Gate 3","location?", 123, 7));
-        db.add(new TreasureLocation("Audi","crap?", 123, 7));
-
-        db.add(new TreasureLocation("Rakshak Bhawan","running out of ideas?", 123, 8));
-        db.add(new TreasureLocation("Cafe","Long way?", 123, 8));
-
-        db.add(new TreasureLocation("Rajiv Chowk","what does the fox say?", 123, 0)); //rand 9,10
-
-        db.add(new TreasureLocation("A2Z","shhhhhh?", 123, 11));
-        db.add(new TreasureLocation("Temple","omega gamma?", 123, 12));
-        db.add(new TreasureLocation("Mission Vision","doraemom?", 123, 13));
-        db.add(new TreasureLocation("Firehose Cabinet","kiteretsu?", 123, 13));
-
-        db.add(new TreasureLocation("Bike no","pokemon?", 123, 0)); //rand 14,15
-
-        db.add(new TreasureLocation("G11","DBZ?", 123, 16));
-        db.add(new TreasureLocation("TS9","beyblade?", 123, 16));
-
-        db.add(new TreasureLocation("COPAC","chota bheem?", 123, 17));
-
-        db.add(new TreasureLocation("CL-1","pingu?", 123, 100));
+//        db.add(new TreasureLocation("LT-3","What's my name?", "LT-3", 0)); //rand 2,3,4,5
+//
+//        db.add(new TreasureLocation("Gate 1","Address?", "Gate 1", 6));
+//        db.add(new TreasureLocation("Gate 2","email?", "Gate 2", 6));
+//        db.add(new TreasureLocation("Gate 3","location?", "Gate 3", 7));
+//        db.add(new TreasureLocation("Audi","crap?", "Audi", 7));
+//
+//        db.add(new TreasureLocation("Rakshak Bhawan","running out of ideas?", "Rashak Bhawan", 8));
+//        db.add(new TreasureLocation("Cafe","Long way?", 123, 8));
+//
+//        db.add(new TreasureLocation("Rajiv Chowk","what does the fox say?", 123, 0)); //rand 9,10
+//
+//        db.add(new TreasureLocation("A2Z","shhhhhh?", 123, 11));
+//        db.add(new TreasureLocation("Temple","omega gamma?", 123, 12));
+//        db.add(new TreasureLocation("Mission Vision","doraemom?", 123, 13));
+//        db.add(new TreasureLocation("Firehose Cabinet","kiteretsu?", 123, 13));
+//
+//        db.add(new TreasureLocation("Bike no","pokemon?", 123, 0)); //rand 14,15
+//
+//        db.add(new TreasureLocation("G11","DBZ?", 123, 16));
+//        db.add(new TreasureLocation("TS9","beyblade?", 123, 16));
+//
+//        db.add(new TreasureLocation("COPAC","chota bheem?", 123, 17));
+//
+//        db.add(new TreasureLocation("CL-1","pingu?", 123, 100));
     }
 
     public TreasureLocation get()
