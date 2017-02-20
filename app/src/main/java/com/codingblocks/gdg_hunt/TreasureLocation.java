@@ -10,12 +10,14 @@ public class TreasureLocation {
     int pass;
     int next;
 
+
     public TreasureLocation(String location, String question, int pass, int next)
     {
         this.location = location;
         this.question = question;
         this.pass = pass;
         this.next = next;
+
     }
 
     public int getNext()
