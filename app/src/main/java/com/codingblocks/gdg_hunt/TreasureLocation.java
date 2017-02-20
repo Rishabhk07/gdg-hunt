@@ -10,12 +10,12 @@ public class TreasureLocation {
     int pass;
     int next;
 
-    public TreasureLocation(String l, String q, int p, int n)
+    public TreasureLocation(String location, String question, int pass, int next)
     {
-        location = l;
-        question = q;
-        pass = p;
-        next = n;
+        this.location = location;
+        this.question = question;
+        this.pass = pass;
+        this.next = next;
     }
 
     public int getNext()

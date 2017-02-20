@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">gdg-hunt</string>
+
+    <string name="title_activity_question_display">QuestionDisplay</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

@@ -24,6 +24,7 @@ public class dbHelper {
         score = scorePref.getScore();
 
         db = new ArrayList<>();
+
         db.add(new TreasureLocation("LT-3","What's my name?", 123, 0)); //rand 2,3,4,5
 
         db.add(new TreasureLocation("Gate 1","Address?", 123, 6));

@@ -13,14 +13,14 @@ public class ScorePref {
     SharedPreferences pref;
     Context context;
     SharedPreferences.Editor editor;
-    int PRIVATE_MODE=1;
+//    int PRIVATE_MODE=1;
     final String prefName = "gdg-hunt-score";
     final String SCORE = "score";
 
     ScorePref(Context context)
     {
         this.context = context;
-        pref = context.getSharedPreferences(prefName,PRIVATE_MODE);
+        pref = context.getSharedPreferences(prefName,Context.MODE_PRIVATE);
         editor = pref.edit();
     }
 

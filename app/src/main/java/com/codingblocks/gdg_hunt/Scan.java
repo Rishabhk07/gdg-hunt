@@ -31,6 +31,7 @@ public class Scan extends AppCompatActivity {
     private int track = 0;
     dbHelper mdbHelper;
     static int scanned=-1;
+    String scan;
     Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,14 +73,16 @@ public class Scan extends AppCompatActivity {
                         public void run() {
                             try
                             {
-                                scanned = Integer.parseInt(barcodes.valueAt(0).displayValue);
+
+                             scan = barcodes.valueAt(0).displayValue;
                                 barcodeInfo.setText(    // Update the TextView
-                                        scanned + ""
+                                        scan
                                 );
                             }
                             catch (Exception e)
                             {
                                 Log.e("error : ",e.getMessage());
+//                                Log.e("error : ",e.printStackTrace());
                             }
                         }
                     });
@@ -126,15 +129,15 @@ public class Scan extends AppCompatActivity {
 
     public void verifyQR(View view)
     {
-        if(scanned == -1) {
-            Log.d("gdg_hunt","Nothing detected, blocking");
-            return;
-        }
-
-        if(track == 100) {
-            Toast.makeText(getApplicationContext(), "GAME OVER", Toast.LENGTH_LONG).show();
-            return;
-        }
+//        if(scanned == -1) {
+//            Log.d("gdg_hunt","Nothing detected, blocking");
+//            return;
+//        }
+//
+//        if(track == 100) {
+//            Toast.makeText(getApplicationContext(), "GAME OVER", Toast.LENGTH_LONG).show();
+//            return;
+//        }
         TreasureLocation t = mdbHelper.get();
         boolean ret = (t.getPass() == scanned);
         if(ret) {
