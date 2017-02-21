@@ -1,17 +1,17 @@
 package com.codingblocks.gdg_hunt;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +23,7 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 import java.io.IOException;
 
 public class Scan extends AppCompatActivity {
-
+    PathPref pathPref;
     private SurfaceView cameraView;
     private TextView barcodeInfo;
     private TextView question;
@@ -31,7 +31,7 @@ public class Scan extends AppCompatActivity {
     private int track = 0;
     dbHelper mdbHelper;
     static int scanned=-1;
-    String scan;
+    String scan="-1";
     Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +43,10 @@ public class Scan extends AppCompatActivity {
         cameraView = (SurfaceView) findViewById(R.id.camera_view);
         barcodeInfo = (TextView) findViewById(R.id.code_info);
         verify = (Button) findViewById(R.id.verify);
-        question = (TextView) findViewById(R.id.question);
+        //question = (TextView) findViewById(R.id.question);
         mdbHelper = new dbHelper();
         mdbHelper.createDummydb(this);
+        pathPref =new PathPref(this);
         //Show the first(0th) question
         display(mdbHelper.get());
 
@@ -76,7 +77,7 @@ public class Scan extends AppCompatActivity {
 
                              scan = barcodes.valueAt(0).displayValue;
                                 barcodeInfo.setText(    // Update the TextView
-                                        scan
+                                   scan
                                 );
                             }
                             catch (Exception e)
@@ -129,25 +130,42 @@ public class Scan extends AppCompatActivity {
 
     public void verifyQR(View view)
     {
-//        if(scanned == -1) {
-//            Log.d("gdg_hunt","Nothing detected, blocking");
-//            return;
-//        }
+        if(scan.equals("-1")) {
+            Log.d("gdg_hunt","Nothing detected, blocking");
+            return;
+        }
 //
 //        if(track == 100) {
 //            Toast.makeText(getApplicationContext(), "GAME OVER", Toast.LENGTH_LONG).show();
 //            return;
 //        }
         TreasureLocation t = mdbHelper.get();
+        Log.e("tag",t.getPass());
+        Log.e("tag",scan);
+
+       // String t_string=Integer.toString(t.getPass());
         boolean ret = (t.getPass().equals(scan));
         if(ret) {
             track = mdbHelper.moveToNext();
             scanned = -1;
-            if(track < 100)
-            {
+//            if(track < 100)
+//            {
+//
+//                display(mdbHelper.get());
+//            }
 
-                display(mdbHelper.get());
-            }
+//            question.setText(mdbHelper.get().getDescription());
+            String ques = mdbHelper.get().getQ();
+            String desc = mdbHelper.get().getDescription();
+
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("question" , ques);
+            returnIntent.putExtra("description" , desc);
+            pathPref.setQuestion(desc);
+            setResult(121, returnIntent);
+            Toast.makeText(Scan.this, "Level Cleared Succesfully", Toast.LENGTH_SHORT).show();
+            finish();
+            Log.d("TAG",mdbHelper.get().getQ());
         }
         else {
             Toast.makeText(getApplicationContext(), "Invalid password!", Toast.LENGTH_LONG).show();
@@ -158,7 +176,13 @@ public class Scan extends AppCompatActivity {
     private void display(TreasureLocation obj)
     {
         //set new question here
-        question.setText(obj.getQ());
-        barcodeInfo.setText(scanned + "");
+       // question.setText(obj.getQ());
+        //barcodeInfo.setText(scanned + "");
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
     }
 }

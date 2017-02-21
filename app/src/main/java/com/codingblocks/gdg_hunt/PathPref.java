@@ -3,8 +3,6 @@ package com.codingblocks.gdg_hunt;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import java.util.Random;
-
 /**
  * Created by DravitLochan on 07-02-2017.
  */
@@ -18,6 +16,7 @@ public class PathPref {
     private static final String PREF_NAME="gdg-hunt-path";
     private static final String PATH_NUMBER="pathNumber";
     private static final String IS_PATH_SET="IsPathSet";
+    private static final String QUESTION="Question";
 
     public PathPref(Context context)
     {
@@ -43,4 +42,17 @@ public class PathPref {
     {
         return pref.getBoolean(IS_PATH_SET,false);
     }
+
+    public void setQuestion(String question)
+    {
+        editor.putString(QUESTION,question);
+        editor.commit();
+    }
+
+
+    public String getQuestion()
+    {
+        return pref.getString(QUESTION," ");
+    }
+
 }
