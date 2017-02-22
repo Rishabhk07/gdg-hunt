@@ -196,8 +196,66 @@ public class dbHelper {
                 " getch();\n" +
                 " return 0;\n" +
                 "}\n", "Temple", 12));
-        db.add(new TreasureLocation("Mission Vision",question,"Question for Mission Vision", "Mission Vission", 13));
-        db.add(new TreasureLocation("Firehose Cabinet",question,"Question for Firehose Cabinet", "Firehouse Cabinet", 13));
+        db.add(new TreasureLocation("Mission Vision",question,"#include <stdio.h>\n" +
+                "\n" +
+                "int main() {\n" +
+                "\tint i,j;\n" +
+                "\tint letters[5][5]={{75,79,32,65,74},\n" +
+                "\t\t\t   {67,82,87,73,66},\n" +
+                "\t\t\t   {72,88,69,10,83},\n" +
+                "\t\t\t   {68,86,80,78,89},\n" +
+                "\t\t\t   {70,77,84,76,53}};\n" +
+                "\t\n" +
+                "    printf(\"%c\", letters[1][3]+5);\n" +
+                "    printf(\"%c\", letters[0][4]-1);\n" +
+                "    printf(\"%c\", letters[4][4]+30);\n" +
+                "    printf(\"%c\", letters[4][3]+1);\n" +
+                "    printf(\"%c\", letters[2][2]+10);\n" +
+                "    printf(\"%c\", letters[2][1]-5);\n" +
+                "    printf(\"%c\", letters[1][3]);\n" +
+                "    printf(\"%c\", letters[0][2]);\n" +
+                "    printf(\"%c\", letters[1][3]);\n" +
+                "    printf(\"%c\", letters[3][4]-6);\n" +
+                "    printf(\"%c\", letters[3][4]-11);\n" +
+                "    printf(\"%c\", letters[1][3]);\n" +
+                "    printf(\"%c\", letters[0][1]);\n" +
+                "    printf(\"%c\", letters[3][2]+6);\n" +
+                "    \n" +
+                "    // rearrange the output to get the next location\n" +
+                "\n" +
+                "    return 0;\n" +
+                "}\n", "Mission Vission", 13));
+        db.add(new TreasureLocation("Firehose Cabinet",question,"#include <stdio.h>\n" +
+                "\n" +
+                "int main() {\n" +
+                "\tint i,j;\n" +
+                "\tint letters[5][5]={{75,79,32,65,74},\n" +
+                "\t\t\t   {67,82,87,73,66},\n" +
+                "\t\t\t{72,88,69,10,83},\n" +
+                "\t\t\t{68,86,80,78,89},\n" +
+                "\t\t\t{70,77,84,76,53}};\n" +
+                "\t\n" +
+                "\tprintf(\"%c\", letters[2][1]-5);\n" +
+                "    \tprintf(\"%c\", letters[0][4]-1);\n" +
+                "    \tprintf(\"%c\", letters[2][3]+60);\n" +
+                "    \tprintf(\"%c\", letters[1][2]-5); \n" +
+                "    \tprintf(\"%c\", letters[2][2]);\n" +
+                "    \tprintf(\"%c\", letters[2][2]+10); \n" +
+                "    \tprintf(\"%c\", letters[2][0]);\n" +
+                "    \tprintf(\"%c\", letters[0][4]-5);\n" +
+                "    \tprintf(\"%c\", letters[0][2]);\n" +
+                "    \tprintf(\"%c\", letters[4][3]+8);\n" +
+                "    \tprintf(\"%c\", letters[0][4]-9);\n" +
+                "    \tprintf(\"%c\", letters[1][4]);  \n" +
+                "    \tprintf(\"%c\", letters[3][4]-11); \n" +
+                "    \tprintf(\"%c\", letters[4][4]+14); \n" +
+                "    \tprintf(\"%c\", letters[0][3]+4);\n" +
+                "    \tprintf(\"%c\", letters[1][3]);\n" +
+                "    \tprintf(\"%c\", letters[0][2]);\n" +
+                "    \tprintf(\"%c\", letters[0][2]+21);\n" +
+                "    \t// rearrange the output to get the next location\n" +
+                "return 0;\n" +
+                "}", "Firehouse Cabinet", 13));
 //
         db.add(new TreasureLocation("Bike no",question,"\n" +
                 "//Note: In the print statement '+' means concatenation. Example- print(\"a\"+\"b\"+\"c\") Gives the output \"abc\".\n" +

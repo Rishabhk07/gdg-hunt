@@ -21,7 +21,7 @@
         <activity android:name=".FromAssets" />
         <activity android:name=".Scan" />
         <activity android:name=".QuestionDisplay" />
-        <activity android:name=".Intro"></activity>
+        <activity android:name=".Intro" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Continue"></activity>
+        <activity android:name=".Continue" />
+        <activity android:name=".HowPlay" />
+        <activity android:name=".DevInfo"></activity>
     </application>
 
 </manifest>

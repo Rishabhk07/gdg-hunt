@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_dev_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.codingblocks.gdg_hunt.DevInfo"
+    >
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary_text"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:text="Developers Info"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:id="@+id/heading"
+        android:gravity="center"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_below="@id/heading"
+    android:layout_margin="20dp"
+    android:layout_centerInParent="true">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Rishabh Khanna"
+        android:layout_margin="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Aditya Aggarwal"
+        android:layout_margin="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Naman Arora"
+        android:layout_margin="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Dravit Lochan"
+        android:layout_margin="5dp"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"/>
+
+</LinearLayout>
+
+</RelativeLayout>

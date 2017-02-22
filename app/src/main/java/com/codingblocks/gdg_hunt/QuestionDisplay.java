@@ -7,9 +7,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 public class QuestionDisplay extends AppCompatActivity {
     Button scan;
@@ -20,6 +24,10 @@ public class QuestionDisplay extends AppCompatActivity {
     TextView ques;
     TextView desc;
     PathPref pathPref;
+    FloatingActionsMenu menu;
+    FloatingActionButton fabDev;
+    FloatingActionButton fabHow;
+
 
 
     @Override
@@ -30,7 +38,42 @@ public class QuestionDisplay extends AppCompatActivity {
 
         ques = (TextView) findViewById(R.id.question_number);
         desc = (TextView) findViewById(R.id.code_tv);
+        menu = (FloatingActionsMenu) findViewById(R.id.fab_menu);
+        fabDev = (FloatingActionButton) findViewById(R.id.fab_dev);
+        fabHow = (FloatingActionButton) findViewById(R.id.fab_play);
+
+
+
+        fabHow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(QuestionDisplay.this , HowPlay.class);
+                startActivity(i);
+            }
+        });
+
+        fabDev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(QuestionDisplay.this , DevInfo.class);
+                startActivity(i);
+            }
+        });
+
+
+        menu.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
+            @Override
+            public void onMenuExpanded() {
+
+            }
+
+            @Override
+            public void onMenuCollapsed() {
+
+            }
+        });
         pathPref=new PathPref(this);
+
 
         desc.setText(pathPref.getQuestion());
 
