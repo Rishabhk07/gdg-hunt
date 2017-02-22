@@ -15,7 +15,7 @@ public class dbHelper {
     PathPref pathPref;
     ScorePref scorePref;
     int current, score ;
-    String question="Decode the given code to guess the question !";
+    String question="Decode the given code to guess the Location !";
     public void createDummydb(Context context)
     {
         pathPref = new PathPref(context);
@@ -55,19 +55,19 @@ public class dbHelper {
                 "return 0;\n" +
                 "}\n", "Audi", 7));
 //
-        db.add(new TreasureLocation("Rakshak Bhawan",question,"Yeh Ghar Hai Veer Jawano Ka\n" +
+        db.add(new TreasureLocation("Rakshak Bhawan","Solve the Riddle","Yeh Ghar Hai Veer Jawano Ka\n" +
                 "Albelon Ka Mastaano Ka\n" +
                 "In veero Ka Yaaron…. Hoy!\n" +
                 "In veero Ka Yaaron Kya Kehna\n" +
                 "Yeh veer Hai College Ka Gehna\n", "Rakshak Bhawan", 8));
-        db.add(new TreasureLocation("Cafe",question,"Baar baar din ye aaye, \n" +
+        db.add(new TreasureLocation("Cafe","Solve the Riddle","Baar baar din ye aaye, \n" +
                 "baar baar dil ye gaaye\n" +
                 "Tu jiye hazaaron saal, \n" +
                 "ye meri hai aarzoo\n" +
                 "Happy Birthday to you \n" +
                 "Happy Birthday to you!\n","Cafe", 8));
 //
-        db.add(new TreasureLocation("Rajiv Chowk",question,"String statements[]={\n" +
+        db.add(new TreasureLocation("Rajiv Chowk","Solve the code and the riddle to find the place","String statements[]={\n" +
                 "\t\"Waiting for someone\",\n" +
                 "\t\"For the person who\",\n" +
                 "\t\"It might be\",\n" +
@@ -81,9 +81,9 @@ public class dbHelper {
                 "};\n" +
                 "\n" +
                 "print(statements[3]+\" \"+statements[5]+\" \"+statements[2]+\" \"+statements[8]+\" \");\n" +
-                "print(statements[4]+\" \"+statements[7]+\" \"+statements[0]+\" \"+statements[6]+\" \"+statements[1]+\" \"+statements[9]); \n", "Rajiv Chawk", 0)); //rand 9,10
+                "print(statements[4]+\" \"+statements[7]+\" \"+statements[0]+\" \"+statements[6]+\" \"+statements[1]+\" \"+statements[9]); \n", "Rajiv Chowk", 0)); //rand 9,10
 //
-        db.add(new TreasureLocation("Ambulance",question,"#include<stdio.h>\n" +
+        db.add(new TreasureLocation("Ambulance","Decode the given code to find a pattern and then guess the location from it!","#include<stdio.h>\n" +
                 "#include<conio.h>\n" +
                 "\n" +
                 "int main()\n" +
@@ -144,7 +144,7 @@ public class dbHelper {
                         "  getch();\n" +
                         "  return 0;\n" +
                         "}\n", "Ambulance", 11));
-        db.add(new TreasureLocation("Temple",question,"#include<stdio.h>\n" +
+        db.add(new TreasureLocation("Temple","Decode the given code to find a pattern and then guess the location from it!","#include<stdio.h>\n" +
                 "\n" +
                 "int main()\n" +
                 "{\n" +
@@ -196,7 +196,7 @@ public class dbHelper {
                 " getch();\n" +
                 " return 0;\n" +
                 "}\n", "Temple", 12));
-        db.add(new TreasureLocation("Mission Vision",question,"#include <stdio.h>\n" +
+        db.add(new TreasureLocation("Mission Vision","Rearrange the output to get the next location","#include <stdio.h>\n" +
                 "\n" +
                 "int main() {\n" +
                 "\tint i,j;\n" +
@@ -225,7 +225,7 @@ public class dbHelper {
                 "\n" +
                 "    return 0;\n" +
                 "}\n", "Mission Vission", 13));
-        db.add(new TreasureLocation("Firehose Cabinet",question,"#include <stdio.h>\n" +
+        db.add(new TreasureLocation("Firehose Cabinet","Rearrange the output to get the next location","#include <stdio.h>\n" +
                 "\n" +
                 "int main() {\n" +
                 "\tint i,j;\n" +
@@ -255,39 +255,29 @@ public class dbHelper {
                 "    \tprintf(\"%c\", letters[0][2]+21);\n" +
                 "    \t// rearrange the output to get the next location\n" +
                 "return 0;\n" +
-                "}", "Firehouse Cabinet", 13));
+                "}", "Firehose Cabinet 5", 13));
 //
-        db.add(new TreasureLocation("Bike no",question,"\n" +
-                "//Note: In the print statement '+' means concatenation. Example- print(\"a\"+\"b\"+\"c\") Gives the output \"abc\".\n" +
-                "\n" +
-                "void func()\n" +
+        db.add(new TreasureLocation("Bike no","the output of question will be the clue to find the vehicle. Find the vehicle and Scan the QR code for Bike Number","void func()\n" +
                 "{\n" +
                 "\tint one, two, three;\n" +
-                "\n" +
                 "\tchar company={\"Bajaj\",\"LML\",\"Honda\",\"Hero\",\"Suzuki\",\"TVS\",\"Yamaha\",\"Mahindra\",\"Royal Enfield\"};\n" +
-                "\n" +
                 "\tchar operation={\"ReadOddCharacters()\",\"ReverseString()\",\"ReadEvenCharacters()\",\"ReadCharactersDivisibleBy3()\"};\n" +
-                "\n" +
-                "\tchar model={\")telluB\",\")noillatS\",\"Cfegnhtjuvrnom)\",\")emertX\",\")knuH\",\")etayaH\",\")rotciV\",\")ehcapA\",\")retsiwT\",\")ZF\",\n" +
-                "\t\")RMZ amizraK\",\")enihS\",\")rasluP\",\")rotingI\",\")nrocinU\",\"R052BC\"};\n" +
-                "\n" +
-                "\tchar key[]={\"361\",\"476\",\"843\",\"174\",\"731\",\"871\",\"776\",\"340\",\"878\",\"134\",\"726\",\"713\",\"486\",\"738\",\"673\",\"648\"};\n" +
-                "\n" +
+                "\tchar model={\"telluB)\",\"noillatS)\",\"Cfegnhtjuvrnom)\",\"emertX)\",\"knuH)\",\"etayaH)\",\"rotciV)\",\"ehcapA)\",\"retsiwT)\",\"ZF)\",\n" +
+                "\t\"RMZ amizraK)\",\"enihS)\",\"rasluP)\",\"rotingI)\",\"nrocinU)\",\"R052BC)\"};\n" +
+                "\tchar key[]={361, 476, 843, 174, 731, 871, 776, 340, 878, 134, 726, 713, 459, 738, 673, 648};\n" +
                 "\tthree=key[2]/100;\n" +
-                "\n" +
                 "\tone=(key[10]/10)%10;\n" +
-                "\n" +
                 "\ttwo=(key[5]%10);\n" +
-                "\n" +
-                "\tprint(\"hint is : find \"+company[one]+\" \"+opereration[two]+model[three]+\"whose number is MP04 EM 8xx4\");\n" +
+                "\tfour=key[12]%100;\n" +
+                "\tprint(\"hint is : find \"+company[one]+\" \"+opereration[two]+model[three]+\"whose number is MP04 EM 8\"+four+\"4\");\n" +
                 "}\n" +
                 "\n" +
                 "void main()\n" +
                 "{\n" +
                 "\tfunc();\n" +
-                "} ", "Bike", 0)); //rand 14,15
+                "}\n", "MP04 EM 8594", 0)); //rand 14,15
 //
-        db.add(new TreasureLocation("G11",question,"function(a,b){\n" +
+        db.add(new TreasureLocation("G11","Calculate the number of errors and find the location","function(a,b){\n" +
                 "int a=324,b=93;\n" +
                 "const int f=10;\n" +
                 "char h[10];\n" +
@@ -332,7 +322,7 @@ public class dbHelper {
                 "printf(“%d”,hunt);\n" +
                 "return 0;\n" +
                 "}\n", "G11", 16));
-       db.add(new TreasureLocation("F10",question,"function(a,b){\n" +
+       db.add(new TreasureLocation("F10","Calculate the number of errors and find the location","function(a,b){\n" +
                "int a=324,b=93;\n" +
                "const int f=10;\n" +
                "char h[10]; int c=12,d=90000;\n" +

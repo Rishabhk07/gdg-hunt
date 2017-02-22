@@ -29,7 +29,7 @@ public class Continue extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String pass = hint.getText().toString();
-                if(pass.equals("0000")) {
+                if(pass.equals("7798")) {
                     Intent i = new Intent(Continue.this, QuestionDisplay.class);
                     startActivity(i);
                     finish();

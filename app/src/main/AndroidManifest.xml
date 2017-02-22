@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.codingblocks.gdg_hunt">
 
-    <meta-data
-        android:name="com.google.android.gms.vision.DEPENDENCIES"
-        android:value="barcode" />
+    <!--<meta-data-->
+        <!--android:name="com.google.android.gms.vision.DEPENDENCIES"-->
+        <!--android:value="barcode" />-->
 
     <!-- the above tag automatically download's the bar code detection library on the device that tries to run the app -->
 
@@ -25,7 +25,6 @@
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -168,7 +168,7 @@ public class Scan extends AppCompatActivity {
             Log.d("TAG",mdbHelper.get().getQ());
         }
         else {
-            Toast.makeText(getApplicationContext(), "Invalid password!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Wrong QR Code !! ", Toast.LENGTH_LONG).show();
             scanned = -1;
         }
     }
