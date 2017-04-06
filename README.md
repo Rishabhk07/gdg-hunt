@@ -9,7 +9,3 @@ GDG Jiit required a app for a treasure hunt by solving coding puzzles and reachi
 
 - [Google Mobile Vision Api](https://developers.google.com/vision/android/getting-started) - Used to Scan QR COde in the App.
 - Android Support Design.
-
-# ScreenShots
-
-
