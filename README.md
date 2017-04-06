@@ -1,6 +1,6 @@
 # Marylines's Code Hunt
 
-This app was build for GDG JIIT NOIDA, where people scan QR code to solve a coding puzzle and get to next location.
+This app was build for GDG JIIT NOIDA, where people scan QR code to solve a coding puzzle and get to next location. The app is live [here](https://play.google.com/store/apps/details?id=com.codingblocks.gdg_hunt&hl=en)
 
 # Motivation
 GDG Jiit required a app for a treasure hunt by solving coding puzzles and reaching different locations on the campus then scnanning the QR code for the answer and if answer is right, next Coding Puzzle will be shown
