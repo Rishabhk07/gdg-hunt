@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.codingblocks.gdg_hunt.HowPlay">
+    tools:context="com.codingblocks.gdg_hunt.HowPlay"
+    android:background="@color/black">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,6 +17,7 @@
         android:layout_centerInParent="true"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
         android:text="Scan the QR Code to get Next Question, and click verify to check if location(qr code) is correct or not"/>
 
 </RelativeLayout>

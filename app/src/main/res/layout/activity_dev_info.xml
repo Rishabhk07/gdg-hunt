@@ -4,6 +4,7 @@
     android:id="@+id/activity_dev_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
 
     tools:context="com.codingblocks.gdg_hunt.DevInfo"
     >
@@ -12,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/secondary_text"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="40dp"
         android:text="Developers Info"
         android:layout_centerHorizontal="true"
@@ -27,28 +28,14 @@
     android:layout_below="@id/heading"
     android:layout_margin="20dp"
     android:layout_centerInParent="true">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:text="Rishabh Khanna"
-        android:layout_margin="5dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:text="Aditya Aggarwal"
-        android:layout_margin="5dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
         android:text="Naman Arora"
         android:layout_margin="5dp"/>
     <TextView
@@ -56,8 +43,18 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:textSize="30sp"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:text="Dravit Lochan"
+        android:layout_margin="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Medha Saha"
         android:layout_margin="5dp"/>
 
     <ImageView
