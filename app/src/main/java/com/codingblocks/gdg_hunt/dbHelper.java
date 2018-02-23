@@ -167,7 +167,7 @@ public class dbHelper {
                 "printf(“%c”,Marilyn-ruby);\n" +
                 "printf(“%d”,ruby);\n" +
                 "return 0;\n" +
-                "}\n", "F-10", 16));
+                "}\n", "F-10", 13));
         db.add(new TreasureLocation("RAKSHAK",question,"Yeh Ghar Hai Veer Jawano Ka\n" +
                 "Albelon Ka Mastaano Ka\n" +
                 "In veero Ka Yaaron…. Hoy!\n" +
